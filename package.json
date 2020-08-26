@@ -1,0 +1,29 @@
+{
+  "fitbit": {
+    "appUUID": "a10f7b07-bb49-47b6-a781-e9055852e294",
+    "appType": "clockface",
+    "appDisplayName": "Clock Only Beta",
+    "iconFile": "resources/icon.png",
+    "wipeColor": "",
+    "requestedPermissions": [
+      "access_activity",
+      "access_heart_rate",
+      "access_user_profile"
+    ],
+    "buildTargets": [
+      "higgs",
+      "meson",
+      "gemini",
+      "mira"
+    ],
+    "i18n": {
+      "en": {
+        "name": "Clock Only Beta"
+      }
+    },
+    "defaultLanguage": "en-US"
+  },
+  "devDependencies": {
+    "@fitbit/sdk": "~4.1.0"
+  }
+}

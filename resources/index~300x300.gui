@@ -1,0 +1,7 @@
+<svg class="background">
+  <image href="images/image placeholder versa.png" fill="white" load="sync" />
+  <image id="imageBackground" />
+  <text id="time" class="foreground" />
+  <text id="ampm" class="foreground" />
+  <text id="date" class="foreground" />
+</svg>

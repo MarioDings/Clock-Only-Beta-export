@@ -1,0 +1,29 @@
+.background {
+  viewport-fill: black;
+}
+
+.fontcolor {
+  x: 1%;
+  fill: navajowhite;
+}
+
+#time {
+  font-family: System-Bold;
+  text-length: 32;
+  font-size: 100;
+  y: 25%;
+}
+
+#ampm {
+  font-family: System-Bold;
+  text-length: 32;
+  font-size: 30;
+  y: 35%;
+}
+
+#date {
+  font-family: System-Bold;
+  text-length: 32;
+  font-size: 22;
+  y: 96%;
+}

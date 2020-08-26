@@ -1,0 +1,7 @@
+<svg class="background">
+  <image href="images/image placeholder ionic.png" fill="white" load="sync" />
+  <image id="imageBackground" />
+  <text id="time" class="font" />
+  <text id="ampm" class="font" />
+  <text id="date" class="icon" />
+</svg>
