@@ -24,6 +24,8 @@ settingsStorage.onchange = function(evt) {
 
 }
 
+
+
 function compressAndTransferImage(settingsValue) {
   const imageData = JSON.parse(settingsValue);
   Image.from(imageData.imageUri)

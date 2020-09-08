@@ -79,12 +79,11 @@ function applyIcon(icon) {
 // Listen for the onmessage event
 
 messaging.peerSocket.onmessage = evt => {
-  applyTheme(evt.data.font);
+if (evt.data.key === "font") {
+applyTheme(evt.data.font);}
+if (evt.data.key === "icon") {
+applyIcon(evt.data.icon);}
 }
-messaging.peerSocket.onmessage = evt => {
-  applyIcon(evt.data.icon);
-}
-
 
 // Register for the unload event
 
