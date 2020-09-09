@@ -15,12 +15,10 @@ settingsStorage.onchange = function(evt) {
   if (messaging.peerSocket.readyState === messaging.peerSocket.OPEN) {
       if (evt.key === "font") {
       let data = JSON.parse(evt.newValue);
-        console.log(evt.data.value, evt.data.key);
       messaging.peerSocket.send(data["values"][0].value);
       }
       if (evt.key === "icon") {
       let data = JSON.parse(evt.newValue);
-        console.log(evt.data.value, evt.data.key);
       messaging.peerSocket.send(data["values"][0].value);
     }
     }

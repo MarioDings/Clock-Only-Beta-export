@@ -16,7 +16,8 @@ const imageBackground = document.getElementById("imageBackground");
 
 let settings = loadSettings();
 applySettings(imageBackground.image);
-applyTheme(settings.font, settings.icon);
+applyFont(settings.font);
+applyIcon(settings.icon);
 me.onunload = saveSettings;
 
 clock.granularity = "seconds";
@@ -58,26 +59,27 @@ clock.ontick = () => updateClock();
 
 
 // Apply theme colors to elements
-function applyTheme(font, icon) {
-  let items = document.getElementsByClassName("font, icon");
+function applyFont(font) {
+  let items = document.getElementsByClassName("font");
   items.forEach(function(item) {
     item.style.fill = font;
-    item.style.fill = icon;
   });
   settings.font = font;
+}
+function applyIcon(icon) {
+  let items = document.getElementsByClassName("icon");
+  items.forEach(function(item) {
+    item.style.fill = icon;
+  });
   settings.icon = icon;
-  
 }
 
 
 
 // Listen for the onmessage event
-
 messaging.peerSocket.onmessage = evt => {
-if (evt.data.key === "font") {
-applyTheme(evt.data.font)}
-if (evt.data.key === "icon") {
-applyTheme(evt.data.icon)}
+  applyFont(evt.data.font);
+  applyIcon(evt.data.icon);
 }
 
 // Register for the unload event
