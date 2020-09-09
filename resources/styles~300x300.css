@@ -1,5 +1,5 @@
 .background {
-  viewport-fill: black;
+  viewport-fill: lightgray;
 }
 
 .fontcolor {
@@ -10,8 +10,8 @@
 #time {
   font-family: System-Bold;
   text-length: 32;
-  font-size: 100;
-  y: 25%;
+  font-size: 90;
+  y: 23%;
 }
 
 #ampm {
@@ -21,9 +21,16 @@
   y: 35%;
 }
 
+#day {
+  font-family: System-Bold;
+  text-length: 32;
+  font-size: 25;
+  y: 89%;
+}
+
 #date {
   font-family: System-Bold;
   text-length: 32;
   font-size: 22;
-  y: 96%;
+  y: 98%;
 }

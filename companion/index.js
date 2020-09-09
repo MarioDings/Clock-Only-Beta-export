@@ -3,6 +3,7 @@ import { Image } from "image";
 import { device } from "peer";
 import { settingsStorage } from "settings";
 import * as messaging from "messaging";
+import * as fs from "fs";
 
 settingsStorage.setItem("screenWidth", device.screen.width);
 settingsStorage.setItem("screenHeight", device.screen.height);

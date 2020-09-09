@@ -16,8 +16,7 @@ const imageBackground = document.getElementById("imageBackground");
 
 let settings = loadSettings();
 applySettings(imageBackground.image);
-applyTheme(settings.font);
-applyIcon(settings.icon);
+applyTheme(settings.font, settings.icon);
 me.onunload = saveSettings;
 
 clock.granularity = "seconds";
@@ -50,7 +49,8 @@ function updateClock() {
   
   elTime.text = `${monotype.monoDigits(iHours)}:${monotype.monoDigits(iMins)}`;
   elampm.text = `${ampm}`;
-  elDate.text = `${util.getDay3(dtDate.getDay())}, ${util.getMonth3(dtDate.getMonth())} ${dtDate.getDate()}, ${dtDate.getFullYear()} `;
+  elDay.text = `${util.getDay3(dtDate.getDay())}, `;
+  elDate.text = `${util.getMonth3(dtDate.getMonth())} ${dtDate.getDate()}, ${dtDate.getFullYear()} `;
 
 }
 
@@ -58,20 +58,15 @@ clock.ontick = () => updateClock();
 
 
 // Apply theme colors to elements
-function applyTheme(font) {
-  let items = document.getElementsByClassName("font");
+function applyTheme(font, icon) {
+  let items = document.getElementsByClassName("font, icon");
   items.forEach(function(item) {
     item.style.fill = font;
-  });
-  settings.font = font;
-  
-}
-function applyIcon(icon) {
-  let items = document.getElementsByClassName("icon");
-  items.forEach(function(item) {
     item.style.fill = icon;
   });
+  settings.font = font;
   settings.icon = icon;
+  
 }
 
 
@@ -80,9 +75,9 @@ function applyIcon(icon) {
 
 messaging.peerSocket.onmessage = evt => {
 if (evt.data.key === "font") {
-applyTheme(evt.data.font);}
+applyTheme(evt.data.font)}
 if (evt.data.key === "icon") {
-applyIcon(evt.data.icon);}
+applyTheme(evt.data.icon)}
 }
 
 // Register for the unload event
@@ -105,28 +100,17 @@ inbox.onnewfile = () => {
 
 function loadSettings() {
   try {
-    settings = fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE);
+    return fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE);
   } catch (ex) {
-    settings = {};
+    return {
+      settings = {},
+      font: "#FFDEAD",
+      icon: "#FFFFFF",
      
     }
-  try {
-    return fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE); 
-  } catch (ex) {
-       // Defaults
-    return {
-      font: "#FFDEAD"
-  }
-  }
-  try {
-    return fs.readFileSync(SETTINGS_FILE, SETTINGS_TYPE); 
-  } catch (ex2) {
-       // Defaults
-    return {
-      icon: "#FFFFFF"
-  }
-  }
 
+  }
+ 
   applySettings();
 }
 

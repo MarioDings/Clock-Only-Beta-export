@@ -3,5 +3,6 @@
   <image id="imageBackground" />
   <text id="time" class="font" />
   <text id="ampm" class="font" />
+  <text id="day" class="icon" />
   <text id="date" class="icon" />
 </svg>

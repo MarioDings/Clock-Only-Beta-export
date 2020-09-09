@@ -1,32 +1,41 @@
 .background {
-  viewport-fill: black;
+  viewport-fill: lightgray;
 }
 
 .fontcolor {
-  font-family: System-Bold;
-  text-length: 32;
-  x: 1%;
   fill: navajowhite;
+}
+
+.iconcolor {
+  fill: white;
 }
 
 
 #time {
   font-family: System-Bold;
   text-length: 32;
-  font-size: 120;
-  y: 36%;
+  font-size: 70;
+  y: 22%;
 }
 
 #ampm {
   font-family: System-Bold;
   text-length: 32;
   font-size: 45;
-  y: 52%;
+  y: 35%;
 }
+
+#day {
+  font-family: System-Bold;
+  text-length: 32;
+  font-size: 25;
+  y: 88%;
+}
+
 
 #date {
   font-family: System-Bold;
   text-length: 32;
   font-size: 25;
-  y: 96%;
+  y: 97%;
 }
